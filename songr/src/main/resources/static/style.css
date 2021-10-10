@@ -1,0 +1,38 @@
+h1{
+color: #6C4A4A;
+text-align:center;
+}
+
+.nav {
+  margin: 2%;
+  overflow: hidden;
+  background-color: #F8E2CF;
+  padding-top:1%;
+  padding-bottom:1%;
+}
+li {
+  display: inline;
+   list-style-type: none;
+   padding: 3%;
+
+}
+
+li a {
+  color: #6C4A4A;
+  text-align: center;
+  font-size: 16px;
+  font-family: tahoma;
+  text-decoration: none;
+}
+.welc{
+color: #6C4A4A;
+text-align:center;
+}
+
+.albums{
+text-align: center;
+}
+
+.albumTitle{
+color: #C89595;
+}

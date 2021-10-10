@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Songr App</h1>
+    <div class="navbar">
+        <ul class="nav">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/hello">Welcome</a>
+            </li>
+            <li>
+                <a href="/capitalize/hello">Capitalize</a>
+            </li>
+            <li>
+                <a href="/albums">Albums</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<h1>Albums</h1>
+<div th:each="Album: ${album}" class="albums">
+        <img th:src="${Album.getImgUrl()}" style="width:200px ; height:190px">
+        <h3 th:text="'Album: '+${Album.getTitle()}" class="albumTitle"></h3>
+        <h4 th:text="'Artist: '+${Album.getArtist()}"></h4>
+        <h4 th:text="'Songs: '+${Album.getSongCount()}"></h4>
+        <h4 th:text="'Songs Length:'+${Album.getLength()+'seconds'}"></h4>
+
+</div>
+</body>
+</html>
