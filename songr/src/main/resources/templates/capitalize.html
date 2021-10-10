@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Capitalize</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1 style="color: #6C4A4A; text-align:center;">Songr App</h1>
+    <div class="navbar">
+        <ul class="nav" style="margin: 2%; overflow: hidden;background-color: #F8E2CF ; padding-top:1%; padding-bottom:1%;">
+             <li style="display: inline; list-style-type: none; padding: 3%;">
+                <a href="/" style="color: #6C4A4A; text-align: center font-size: 16px;font-family: tahoma;text-decoration: none;">Home</a>
+            </li>
+            <li style="display: inline;list-style-type: none; padding: 3%;">
+                <a href="/hello" style="  color: #6C4A4A; text-align: center font-size: 16px;font-family: tahoma;text-decoration: none;">Welcome</a>
+            </li>
+            <li style="display: inline; list-style-type: none;padding: 3%;">
+                <a href="/capitalize/hello" style=" color: #6C4A4A; text-align: center font-size: 16px;font-family: tahoma;text-decoration: none;">Capitalize</a>
+            </li>
+            <li style="display: inline;list-style-type: none;padding: 3%;">
+                <a href="/albums" style="color: #6C4A4A; text-align: center font-size: 16px;font-family: tahoma;text-decoration: none" >Albums</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<h1 th:text=" ${name}" style="color: #6C4A4A;text-align:center;"></h1>
+</body>
+</html>
