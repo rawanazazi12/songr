@@ -25,8 +25,18 @@
         </ul>
     </div>
 </header>
+<h1>Form</h1>
+<form th:action="@{/albums}" th:object="${Album}" method="post" class="form">
+    <p>Title     <input type="text" field=" ${album.title}" name="title" /></p>
+    <p>Artist    <input type="text" field="${album.artist}" name="artist"/></p>
+    <p>ImageUrl  <input type="text" field="${album.imgUrl}" name="imgUrl"/></p>
+    <p>SongCount <input type="text" field="${album.songCount}" name="songCount"/></p>
+    <p>Length    <input type="text" field="${album.length}" name="length"/></p>
+    <p><input type="submit" value="Submit" />
+</form>
+
 <h1>Albums</h1>
-<div th:each="Album: ${album}" class="albums">
+<div th:each="Album: ${albums}" class="albums">
         <img th:src="${Album.getImgUrl()}" style="width:200px ; height:190px">
         <h3 th:text="'Album: '+${Album.getTitle()}" class="albumTitle"></h3>
         <h4 th:text="'Artist: '+${Album.getArtist()}"></h4>

@@ -45,3 +45,12 @@ Generating a constructor with the previous variables. And also generating getter
 
 
 
+## Lab: 12 - Spring and REST
+
+### Overview 
+
+Updating Album model so that it can be saved in a database.
+An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album's art.
+- Allowing the user to add albums to the site using @PostMapping annotation .  
+- Allowing the user to see information about all the albums on the site using @GetMapping annotation .
+- Adding a form to the albums.html file to allow the users to add a new album .
