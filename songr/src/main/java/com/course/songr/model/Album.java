@@ -1,14 +1,29 @@
 package com.course.songr.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Entity
 public class Album {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name="id" , nullable = false)
+    private long id;
     String title;
     String artist;
     int songCount;
     long length;
     String imgUrl;
+//    private timestamp;
+    @CreationTimestamp
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @JsonFormat(pattern= "yyy-MM-dd HH:ss:ss")
+    private LocalDateTime created ;
+
 
     public Album(String title, String artist, int songCount, long length, String imgUrl) {
         this.title = title;
@@ -16,6 +31,10 @@ public class Album {
         this.songCount = songCount;
         this.length = length;
         this.imgUrl = imgUrl;
+    }
+
+    public Album(){
+
     }
 
     public String getTitle() {
@@ -36,6 +55,18 @@ public class Album {
 
     public int getSongCount() {
         return songCount;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public void setSongCount(int songCount) {
