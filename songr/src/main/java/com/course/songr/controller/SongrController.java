@@ -1,7 +1,10 @@
 package com.course.songr.controller;
 
 import com.course.songr.Repository.AlbumRepository;
+import com.course.songr.Repository.SongRepository;
 import com.course.songr.model.Album;
+import com.course.songr.model.Song;
+import com.course.songr.model.dto.SongDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +18,9 @@ import java.util.ArrayList;
 public class SongrController<album2, album1, album3, PostRepository> {
     @Autowired
     private AlbumRepository albumRepository;
+
+    @Autowired
+    private SongRepository songRepository;
 
     @GetMapping("/hello")
         public String helloWorld(){
@@ -54,6 +60,30 @@ public class SongrController<album2, album1, album3, PostRepository> {
         return new RedirectView("albums");
 
         }
+
+        @GetMapping("/songs")
+        public String getSongsPage (Model model ){
+        model.addAttribute("songs", songRepository.findAll());
+        return "songs";
+        }
+
+        @PostMapping("/songs")
+        public RedirectView addNewSong(String title , long songLength, int trackNum, Long id  ){
+            Album album = albumRepository.findById(id).get();
+            Song song = new Song(title,songLength,trackNum,album);
+            songRepository.save(song);
+            return new RedirectView("albums/"+id);
+
+        }
+
+    @GetMapping("/albums/{id}")
+    public String albumInfo(@PathVariable ("id") Long id, Model model){
+        Album album = albumRepository.findById(id).get();
+
+        model.addAttribute("album", album);
+
+        return "songsAlbum";
+    }
 
     }
 

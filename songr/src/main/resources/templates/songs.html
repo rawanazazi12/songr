@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Songr App</h1>
+    <div class="navbar">
+        <ul class="nav">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/hello">Welcome</a>
+            </li>
+            <li>
+                <a href="/capitalize/hello">Capitalize</a>
+            </li>
+            <li>
+                <a href="/albums">Albums</a>
+            </li>
+            <li>
+                <a href="/songs">Songs</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<h1>Fill the Form below if you would like to add a new song </h1>
+<form th:action="@{/songs}" th:object="${Song}" method="post" class="form">
+    <p>Album Id <input type="number"  name="album_id"/></p>
+    <p>Title     <input type="text"  name="title" /></p>
+    <p>Length    <input type="text"  name="songLength"/></p>
+    <p>Track Number  <input type="text"  name="trackNum"/>
+
+
+    <p><input type="submit" value="Submit" />
+</form>
+<h1>Songs</h1>
+<div th:each="Song: ${songs}" class="songs">
+<!--    <h3 th:text="'Album: '+${Song.album.getTitle()}" class="albumTitle"></h3>-->
+    <h3 th:text="'Song: '+${Song.getTitle()}" class="songTitle"></h3>
+    <h4 th:text="'Song Length: '+${Song.getSongLength()}"></h4>
+    <h4 th:text="'Track Number : '+${Song.getTrackNum()}"></h4>
+
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Album {
@@ -18,6 +19,11 @@ public class Album {
     int songCount;
     long length;
     String imgUrl;
+
+    @OneToMany(mappedBy = "album")
+    private List<Song> addedSongs;
+
+
 //    private timestamp;
     @CreationTimestamp
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -36,6 +42,14 @@ public class Album {
     public Album(){
 
     }
+
+//    public List<Song> getAddedSongs() {
+//        return addedSongs;
+//    }
+//
+//    public void setAddedSongs(List<Song> addedSongs) {
+//        this.addedSongs = addedSongs;
+//    }
 
     public String getTitle() {
         return title;
@@ -88,4 +102,6 @@ public class Album {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
+
 }
