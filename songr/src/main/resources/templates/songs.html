@@ -30,7 +30,7 @@
 </header>
 <h1>Fill the Form below if you would like to add a new song </h1>
 <form th:action="@{/songs}" th:object="${Song}" method="post" class="form">
-    <p>Album Id <input type="number"  name="album_id"/></p>
+    <p>Album Title <input type="text"  name="album"/></p>
     <p>Title     <input type="text"  name="title" /></p>
     <p>Length    <input type="text"  name="songLength"/></p>
     <p>Track Number  <input type="text"  name="trackNum"/>

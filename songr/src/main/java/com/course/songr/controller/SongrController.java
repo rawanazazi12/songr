@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -68,21 +70,28 @@ public class SongrController<album2, album1, album3, PostRepository> {
         }
 
         @PostMapping("/songs")
-        public RedirectView addNewSong(String title , long songLength, int trackNum, Long id  ){
-            Album album = albumRepository.findById(id).get();
-            Song song = new Song(title,songLength,trackNum,album);
+        public RedirectView addNewSong(@ModelAttribute SongDTO songDTO ){
+            Album album = albumRepository.findByTitle(songDTO.getTitle()).orElseThrow();
+            Song song = new Song(songDTO.getTitle(),songDTO.getSongLength(),songDTO.getTrackNum(),album);
             songRepository.save(song);
-            return new RedirectView("albums/"+id);
+            return new RedirectView("songs");
 
         }
 
-    @GetMapping("/albums/{id}")
-    public String albumInfo(@PathVariable ("id") Long id, Model model){
-        Album album = albumRepository.findById(id).get();
 
-        model.addAttribute("album", album);
+    @GetMapping("/songs/albums/{album}")
+    public String findSongsByAlbum(@PathVariable  String title, Model model){
+        List<Song> songs = songRepository.findAllByTitle(title);
+        model.addAttribute("albumSong", songs);
 
         return "songsAlbum";
+    }
+    @GetMapping("/songs/{songId}")
+    public String findSongBySongId(@PathVariable String songId, Model model) {
+        Song song = songRepository.findById(Long.parseLong(songId)).orElseThrow();
+        model.addAttribute("albumSong", song);
+
+        return "song";
     }
 
     }
