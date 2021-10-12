@@ -43,9 +43,9 @@ public class Album {
 
     }
 
-//    public List<Song> getAddedSongs() {
-//        return addedSongs;
-//    }
+    public List<Song> getAddedSongs() {
+        return addedSongs;
+    }
 //
 //    public void setAddedSongs(List<Song> addedSongs) {
 //        this.addedSongs = addedSongs;

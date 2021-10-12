@@ -7,6 +7,13 @@ public class SongDTO {
   private int trackNum;
   private String album;
 
+    public SongDTO(String title, long songLength, int trackNum, String album) {
+        this.title = title;
+        this.songLength = songLength;
+        this.trackNum = trackNum;
+        this.album = album;
+    }
+
     public SongDTO() {
 
     }
