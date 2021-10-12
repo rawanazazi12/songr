@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e67fb2ff-b3c3-4cf0-a7be-fde62b4ecda2" name="Changes" comment="" />
+    <list default="true" id="e67fb2ff-b3c3-4cf0-a7be-fde62b4ecda2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/Repository/AlbumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/Repository/AlbumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/Repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/Repository/SongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/controller/SongrController.java" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/controller/SongrController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/model/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/model/dto/SongDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/java/com/course/songr/model/dto/SongDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songr/src/main/resources/templates/songs.html" beforeDir="false" afterPath="$PROJECT_DIR$/songr/src/main/resources/templates/songs.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

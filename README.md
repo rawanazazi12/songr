@@ -54,3 +54,11 @@ An Album has a title, an artist, a songCount, a length (in seconds), and an imag
 - Allowing the user to add albums to the site using @PostMapping annotation .  
 - Allowing the user to see information about all the albums on the site using @GetMapping annotation .
 - Adding a form to the albums.html file to allow the users to add a new album .
+
+
+## Lab: 13 - Related Resources and Integration Testing
+
+## Overview
+
+The requirement for this lab is how the user can add a song to the specific album by fill the forms.
+
