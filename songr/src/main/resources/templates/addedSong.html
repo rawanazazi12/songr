@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Added Songs</title>
+</head>
+<body>
+<!--<h1>Album</h1>-->
+<!--<div th:object="${album}" th:action="@{/songs/albums/{album}}">-->
+<!--    <p>Album Title: <span th:text="${album.title}"></span></p>-->
+<!--    <p>Artist: <span th:text="${album.artist}"></span></p>-->
+<!--    <p>Song Count: <span th:text="${album.songCount}"></span></p>-->
+    <h3>SONGS</h3>
+    <div th:each="song :${albumSong}" >
+        <p>Album Title <span th:text="${song.album.title}"></span> </p>
+        <p>Song Title: <span th:text="${song.title}"></span></p>
+        <p>length: <span th:text="${song.songLength}"></span></p>
+        <p>trackNumber: <span th:text="${song.trackNum}"></span></p>
+    </div>
+
+</div>
+
+</body>
+</html>
