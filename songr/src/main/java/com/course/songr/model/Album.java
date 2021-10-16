@@ -47,9 +47,11 @@ public class Album {
         return addedSongs;
     }
 //
-//    public void setAddedSongs(List<Song> addedSongs) {
-//        this.addedSongs = addedSongs;
-//    }
+
+
+    public void setAddedSongs(List<Song> addedSongs) {
+        this.addedSongs = addedSongs;
+    }
 
     public String getTitle() {
         return title;

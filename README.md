@@ -62,3 +62,10 @@ An Album has a title, an artist, a songCount, a length (in seconds), and an imag
 
 The requirement for this lab is how the user can add a song to the specific album by fill the forms.
 
+Ensure that the relationship between Albums and Songs is appropriately set up (one to many)
+
+- A user should be able to see information about all the songs on the site.
+- A user should be able to view a page with data about one particular album.
+- A user should be able to add songs to an album.
+- A user should be able to see the songs that belong to an album when looking at that album.
+

@@ -40,7 +40,7 @@
 </form>
 <h1>Songs</h1>
 <div th:each="Song: ${songs}" class="songs">
-<!--    <h3 th:text="'Album: '+${Song.album.getTitle()}" class="albumTitle"></h3>-->
+    <h3 th:text="'Album: '+${Song.album.getTitle()}" class="albumTitle"></h3>
     <h3 th:text="'Song: '+${Song.getTitle()}" class="songTitle"></h3>
     <h4 th:text="'Song Length: '+${Song.getSongLength()}"></h4>
     <h4 th:text="'Track Number : '+${Song.getTrackNum()}"></h4>

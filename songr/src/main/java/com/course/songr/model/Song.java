@@ -38,6 +38,9 @@ public class Song {
 
     }
 
+    public Song(String title, long songLength, int trackNum) {
+    }
+
     public Long getId() {
         return id;
     }

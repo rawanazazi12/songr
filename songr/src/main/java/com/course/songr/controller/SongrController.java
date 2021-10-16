@@ -24,6 +24,8 @@ public class SongrController<album2, album1, album3, PostRepository> {
     @Autowired
     private SongRepository songRepository;
 
+    //LAB11
+
     @GetMapping("/hello")
         public String helloWorld(){
             return "hello";
@@ -41,7 +43,7 @@ public class SongrController<album2, album1, album3, PostRepository> {
 //        return newAlbum;
 //    }
 
-
+            //LAB12  The commented lines related to LAB12 to create three albums
         @GetMapping("/albums")
         public String getAlbums(Model album){
 //            ArrayList<Album> albums = new ArrayList<Album>();
@@ -63,6 +65,8 @@ public class SongrController<album2, album1, album3, PostRepository> {
 
         }
 
+        //LAB13
+
         @GetMapping("/songs")
         public String getSongsPage (Model model ){
         model.addAttribute("songs", songRepository.findAll());
@@ -71,28 +75,27 @@ public class SongrController<album2, album1, album3, PostRepository> {
 
         @PostMapping("/songs")
         public RedirectView addNewSong(@ModelAttribute SongDTO songDTO ){
-            Album album = albumRepository.findByTitle(songDTO.getTitle()).orElseThrow();
+            Album album = albumRepository.findAlbumByTitle(songDTO.getAlbum());
             Song song = new Song(songDTO.getTitle(),songDTO.getSongLength(),songDTO.getTrackNum(),album);
             songRepository.save(song);
             return new RedirectView("songs");
-
         }
 
+    @GetMapping("/albums/{title}")
+    public String getSingleAlbum(@PathVariable String title,Model model){
+        model.addAttribute("album",albumRepository.findAlbumByTitle(title));
+        return "specificAlbum";
+    }
 
     @GetMapping("/songs/albums/{album}")
-    public String findSongsByAlbum(@PathVariable  String title, Model model){
-        List<Song> songs = songRepository.findAllByTitle(title);
+    public String findPostByAuthor(@PathVariable String album, Model model) {
+        List<Song> songs = songRepository.findAllByAlbum_Title(album);
         model.addAttribute("albumSong", songs);
 
-        return "songsAlbum";
+        return "addedSong";
     }
-    @GetMapping("/songs/{songId}")
-    public String findSongBySongId(@PathVariable String songId, Model model) {
-        Song song = songRepository.findById(Long.parseLong(songId)).orElseThrow();
-        model.addAttribute("albumSong", song);
 
-        return "song";
-    }
+
 
     }
 
